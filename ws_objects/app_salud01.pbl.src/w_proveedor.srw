@@ -64,7 +64,7 @@ end type
 
 type pb_1 from picturebutton within w_proveedor
 integer x = 3205
-integer y = 72
+integer y = 60
 integer width = 302
 integer height = 292
 integer taborder = 20
@@ -76,7 +76,6 @@ fontfamily fontfamily = swiss!
 string facename = "Tahoma"
 string text = "Procesar"
 string picturename = "C:\jcamacho\bmp\Adobe.jpg"
-alignment htextalign = Center!
 vtextalign vtextalign = vcenter!
 end type
 
