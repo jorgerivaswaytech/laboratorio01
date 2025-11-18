@@ -2,6 +2,8 @@
 forward
 global type w_proveedor from window
 end type
+type cb_insertar from commandbutton within w_proveedor
+end type
 type cb_cerrar from commandbutton within w_proveedor
 end type
 type pb_1 from picturebutton within w_proveedor
@@ -14,7 +16,7 @@ global type w_proveedor from window
 integer width = 3689
 integer height = 1636
 boolean titlebar = true
-string title = "Untitled"
+string title = "Procesar"
 boolean controlmenu = true
 boolean minbox = true
 boolean maxbox = true
@@ -22,6 +24,7 @@ boolean resizable = true
 long backcolor = 67108864
 string icon = "AppIcon!"
 boolean center = true
+cb_insertar cb_insertar
 cb_cerrar cb_cerrar
 pb_1 pb_1
 dw_1 dw_1
@@ -29,15 +32,18 @@ end type
 global w_proveedor w_proveedor
 
 on w_proveedor.create
+this.cb_insertar=create cb_insertar
 this.cb_cerrar=create cb_cerrar
 this.pb_1=create pb_1
 this.dw_1=create dw_1
-this.Control[]={this.cb_cerrar,&
+this.Control[]={this.cb_insertar,&
+this.cb_cerrar,&
 this.pb_1,&
 this.dw_1}
 end on
 
 on w_proveedor.destroy
+destroy(this.cb_insertar)
 destroy(this.cb_cerrar)
 destroy(this.pb_1)
 destroy(this.dw_1)
@@ -46,6 +52,21 @@ end on
 event open;dw_1.settransobject( sqlca)
 dw_1.retrieve( )
 end event
+
+type cb_insertar from commandbutton within w_proveedor
+integer x = 3200
+integer y = 424
+integer width = 402
+integer height = 112
+integer taborder = 20
+integer textsize = -10
+integer weight = 400
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Tahoma"
+string text = "Insertar"
+end type
 
 type cb_cerrar from commandbutton within w_proveedor
 integer x = 3200
@@ -63,7 +84,7 @@ string text = "Cerrar"
 end type
 
 type pb_1 from picturebutton within w_proveedor
-integer x = 3205
+integer x = 3200
 integer y = 60
 integer width = 302
 integer height = 292
