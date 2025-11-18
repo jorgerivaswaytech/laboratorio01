@@ -2,6 +2,8 @@
 forward
 global type w_proveedor from window
 end type
+type cb_cerrar from commandbutton within w_proveedor
+end type
 type pb_1 from picturebutton within w_proveedor
 end type
 type dw_1 from datawindow within w_proveedor
@@ -9,7 +11,7 @@ end type
 end forward
 
 global type w_proveedor from window
-integer width = 3579
+integer width = 3689
 integer height = 1636
 boolean titlebar = true
 string title = "Untitled"
@@ -20,19 +22,23 @@ boolean resizable = true
 long backcolor = 67108864
 string icon = "AppIcon!"
 boolean center = true
+cb_cerrar cb_cerrar
 pb_1 pb_1
 dw_1 dw_1
 end type
 global w_proveedor w_proveedor
 
 on w_proveedor.create
+this.cb_cerrar=create cb_cerrar
 this.pb_1=create pb_1
 this.dw_1=create dw_1
-this.Control[]={this.pb_1,&
+this.Control[]={this.cb_cerrar,&
+this.pb_1,&
 this.dw_1}
 end on
 
 on w_proveedor.destroy
+destroy(this.cb_cerrar)
 destroy(this.pb_1)
 destroy(this.dw_1)
 end on
@@ -40,6 +46,21 @@ end on
 event open;dw_1.settransobject( sqlca)
 dw_1.retrieve( )
 end event
+
+type cb_cerrar from commandbutton within w_proveedor
+integer x = 3218
+integer y = 416
+integer width = 402
+integer height = 112
+integer taborder = 30
+integer textsize = -10
+integer weight = 400
+fontcharset fontcharset = ansi!
+fontpitch fontpitch = variable!
+fontfamily fontfamily = swiss!
+string facename = "Tahoma"
+string text = "Cerrar"
+end type
 
 type pb_1 from picturebutton within w_proveedor
 integer x = 3205
