@@ -48,8 +48,8 @@ dw_1.retrieve( )
 end event
 
 type cb_cerrar from commandbutton within w_proveedor
-integer x = 3209
-integer y = 416
+integer x = 3200
+integer y = 1368
 integer width = 402
 integer height = 112
 integer taborder = 30
