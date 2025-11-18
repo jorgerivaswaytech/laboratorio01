@@ -48,13 +48,13 @@ dw_1.retrieve( )
 end event
 
 type cb_cerrar from commandbutton within w_proveedor
-integer x = 3218
+integer x = 3209
 integer y = 416
 integer width = 402
 integer height = 112
 integer taborder = 30
 integer textsize = -10
-integer weight = 400
+integer weight = 700
 fontcharset fontcharset = ansi!
 fontpitch fontpitch = variable!
 fontfamily fontfamily = swiss!
