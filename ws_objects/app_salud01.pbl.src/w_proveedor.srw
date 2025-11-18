@@ -16,7 +16,7 @@ global type w_proveedor from window
 integer width = 3689
 integer height = 1636
 boolean titlebar = true
-string title = "Procesar"
+string title = "Procesar dw"
 boolean controlmenu = true
 boolean minbox = true
 boolean maxbox = true

@@ -10,7 +10,7 @@ global type w_principal from window
 integer width = 3803
 integer height = 1644
 boolean titlebar = true
-string title = "Procesos"
+string title = "Procesos - 2025"
 string menuname = "m_principal"
 boolean controlmenu = true
 boolean minbox = true
