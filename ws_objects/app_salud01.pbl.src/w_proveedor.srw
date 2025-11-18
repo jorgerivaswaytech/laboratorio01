@@ -74,8 +74,10 @@ fontcharset fontcharset = ansi!
 fontpitch fontpitch = variable!
 fontfamily fontfamily = swiss!
 string facename = "Tahoma"
+string text = "Procesar"
 string picturename = "C:\jcamacho\bmp\Adobe.jpg"
-alignment htextalign = left!
+alignment htextalign = Center!
+vtextalign vtextalign = vcenter!
 end type
 
 event clicked;//OLEObject PDFCreatorQueue 
